@@ -1,0 +1,300 @@
+{
+  "id": "01a0f77c-4003-7498-a297-899f957be25d",
+  "created": 1790858523,
+  "model": "gpt-5.1",
+  "object": "chat.completion",
+  "choices": [
+    {
+      "finish_reason": "interrupted",
+      "index": 0,
+      "message": {
+        "content": "",
+        "role": "assistant"
+      }
+    }
+  ],
+  "cost": 0.0364735,
+  "conversation_id": "01a0f77c-4004-75a8-b41c-a6e9bf482bfe",
+  "usage": {
+    "completion_tokens": 339,
+    "prompt_tokens": 39254,
+    "total_tokens": 39593,
+    "prompt_tokens_details": {
+      "cached_tokens": 14208
+    }
+  },
+  "metadata": [
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "web_search",
+          "category": "tools"
+        },
+        "name": "discover_tools",
+        "tool_name": "discover_tools",
+        "run_id": "call_h4QwlDgc1AGne5jkDeMBD5sB",
+        "status": "start",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "web_search",
+          "category": "tools"
+        },
+        "output": "- **Web Search** (`websearch`): Useful for when you need to search the web.\n- **search-onedrive-files** (`ms365_search-onedrive-files`): Search the hierarchy of items for items matching a query.\nYou can search within a folder hierarchy, a whole drive, or files shared with the current user.\n\n💡 TIP: Searches for files in a drive by name or content. The q parameter searches file names, metadata, and file content. Returns matching driveItems with id, name, webUrl, size, lastModifiedDateTime. Use list-drives first to get the drive-id.\n- **search_kumo_docs** (`kumo-mcp_search_kumo_docs`): Search official Kumo product documentation and return full markdown content.\n\nThis tool searches the canonical Kumo documentation published in the\nbayer-int/kumo-cli repository under kumo-doc/docs. It is the best way to\nlearn how Kumo works: CLI commands, spaces, pipelines, file transfer,\ngovernance, authentication, deployment, and platform concepts.\n\nUnlike a generic web search, results come directly from maintained Kumo docs.\n- **search-sharepoint-sites** (`ms365_search-sharepoint-sites`): List all available sites in an organization. Specific filter criteria and query options are also supported and described below: In addition, you can use a $search query against the /sites collection to find sites matching given keywords.\nIf you want to list all sites across all geographies, refer to getAllSites. For more guidance about building applications that use site discovery for scanning purposes, see Best practices for discovering files and detecting changes at scale.\n- **search_kumo_docs** (`kumo-dev-mcp_search_kumo_docs`): Search official Kumo product documentation and return full markdown content.\n\nThis tool searches the canonical Kumo documentation published in the\nbayer-int/kumo-cli repository under kumo-doc/docs. It is the best way to\nlearn how Kumo works: CLI commands, spaces, pipelines, file transfer,\ngovernance, authentication, deployment, and platform concepts.\n\nUnlike a generic web search, results come directly from maintained Kumo docs.",
+        "name": "discover_tools",
+        "tool_name": "discover_tools",
+        "run_id": "call_h4QwlDgc1AGne5jkDeMBD5sB",
+        "status": "end",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "Nifty 50 today close, 20 EMA, 50 EMA, India VIX level, FII DII cash market flows, advance decline NSE",
+          "num_results": 5,
+          "date_restrict": "d1"
+        },
+        "name": "websearch",
+        "tool_name": "websearch",
+        "run_id": "call_C7Y6xtzrZRAoJpuAsVZPBrZd",
+        "status": "start",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "Bank Nifty today close vs 20 EMA 50 EMA",
+          "num_results": 3,
+          "date_restrict": "d1"
+        },
+        "name": "websearch",
+        "tool_name": "websearch",
+        "run_id": "call_3rMF7hMhTIyxEMVafctWFJ8R",
+        "status": "start",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "NSE India F&O ban list today",
+          "num_results": 5,
+          "date_restrict": "d1"
+        },
+        "name": "websearch",
+        "tool_name": "websearch",
+        "run_id": "call_VdXmzVtu012uH4uzu0Lvl6fQ",
+        "status": "start",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "Moneycontrol market wrap Nifty Bank Nifty India VIX FII DII flows",
+          "num_results": 5,
+          "date_restrict": "d1"
+        },
+        "name": "websearch",
+        "tool_name": "websearch",
+        "run_id": "call_4OpgLJN2dQx9ApbYmRKKqneg",
+        "status": "start",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "global cues US markets today, Asian markets, Brent crude price USD, USDINR, US 10-year yield",
+          "num_results": 5,
+          "date_restrict": "d1"
+        },
+        "name": "websearch",
+        "tool_name": "websearch",
+        "run_id": "call_a70Jk4ImggMpK7s2wOMSNYW2",
+        "status": "start",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "NSE bulk deals, stocks with 52 week high today, high volume gainers",
+          "num_results": 5,
+          "date_restrict": "d1"
+        },
+        "name": "websearch",
+        "tool_name": "websearch",
+        "run_id": "call_AVL80KOMsaB4tH2pmGjR6Ygt",
+        "status": "start",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "Economic Times Markets stocks in news today India",
+          "num_results": 5,
+          "date_restrict": "d1"
+        },
+        "name": "websearch",
+        "tool_name": "websearch",
+        "run_id": "call_6EaHJzMoqrKDqrnRfIdVFSDO",
+        "status": "start",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "interrupt",
+        "interrupt_id": "b4829b020c242b167fccca5af9c8a5fe",
+        "type": "tool_approval",
+        "action_requests": [
+          {
+            "name": "websearch",
+            "args": {
+              "query": "Nifty 50 today close, 20 EMA, 50 EMA, India VIX level, FII DII cash market flows, advance decline NSE",
+              "num_results": 5,
+              "date_restrict": "d1"
+            },
+            "description": ""
+          },
+          {
+            "name": "websearch",
+            "args": {
+              "query": "Bank Nifty today close vs 20 EMA 50 EMA",
+              "num_results": 3,
+              "date_restrict": "d1"
+            },
+            "description": ""
+          },
+          {
+            "name": "websearch",
+            "args": {
+              "query": "NSE India F&O ban list today",
+              "num_results": 5,
+              "date_restrict": "d1"
+            },
+            "description": ""
+          },
+          {
+            "name": "websearch",
+            "args": {
+              "query": "Moneycontrol market wrap Nifty Bank Nifty India VIX FII DII flows",
+              "num_results": 5,
+              "date_restrict": "d1"
+            },
+            "description": ""
+          },
+          {
+            "name": "websearch",
+            "args": {
+              "query": "global cues US markets today, Asian markets, Brent crude price USD, USDINR, US 10-year yield",
+              "num_results": 5,
+              "date_restrict": "d1"
+            },
+            "description": ""
+          },
+          {
+            "name": "websearch",
+            "args": {
+              "query": "NSE bulk deals, stocks with 52 week high today, high volume gainers",
+              "num_results": 5,
+              "date_restrict": "d1"
+            },
+            "description": ""
+          },
+          {
+            "name": "websearch",
+            "args": {
+              "query": "Economic Times Markets stocks in news today India",
+              "num_results": 5,
+              "date_restrict": "d1"
+            },
+            "description": ""
+          }
+        ],
+        "review_configs": [
+          {
+            "action_name": "websearch",
+            "allowed_decisions": [
+              "approve",
+              "edit",
+              "reject",
+              "respond"
+            ]
+          },
+          {
+            "action_name": "websearch",
+            "allowed_decisions": [
+              "approve",
+              "edit",
+              "reject",
+              "respond"
+            ]
+          },
+          {
+            "action_name": "websearch",
+            "allowed_decisions": [
+              "approve",
+              "edit",
+              "reject",
+              "respond"
+            ]
+          },
+          {
+            "action_name": "websearch",
+            "allowed_decisions": [
+              "approve",
+              "edit",
+              "reject",
+              "respond"
+            ]
+          },
+          {
+            "action_name": "websearch",
+            "allowed_decisions": [
+              "approve",
+              "edit",
+              "reject",
+              "respond"
+            ]
+          },
+          {
+            "action_name": "websearch",
+            "allowed_decisions": [
+              "approve",
+              "edit",
+              "reject",
+              "respond"
+            ]
+          },
+          {
+            "action_name": "websearch",
+            "allowed_decisions": [
+              "approve",
+              "edit",
+              "reject",
+              "respond"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "trace_id": "6abe46339014c92b7d0886abafe56db0"
+}

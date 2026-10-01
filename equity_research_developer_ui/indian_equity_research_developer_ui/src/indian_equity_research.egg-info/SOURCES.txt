@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+src/indian_equity_research/__init__.py
+src/indian_equity_research/cli.py
+src/indian_equity_research/client.py
+src/indian_equity_research/config.py
+src/indian_equity_research/project_editor.py
+src/indian_equity_research/prompt.py
+src/indian_equity_research/runner.py
+src/indian_equity_research.egg-info/PKG-INFO
+src/indian_equity_research.egg-info/SOURCES.txt
+src/indian_equity_research.egg-info/dependency_links.txt
+src/indian_equity_research.egg-info/entry_points.txt
+src/indian_equity_research.egg-info/requires.txt
+src/indian_equity_research.egg-info/top_level.txt

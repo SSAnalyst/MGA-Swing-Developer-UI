@@ -69,27 +69,17 @@ class MyGenAssistClient:
 
 
 def extract_text(response: dict[str, Any]) -> str:
-    """Handle common OpenAI-compatible and agent response shapes safely.
-
-    This helper prefers the primary message content, but if the response
-    represents an interrupted tool-approval flow or otherwise has no textual
-    content, it returns an empty string so the caller can decide how to handle
-    the failure case.
-    """
+    """Handle common OpenAI-compatible and agent response shapes safely."""
     choices = response.get("choices") or []
     if choices:
         message = choices[0].get("message", {})
         content = message.get("content")
-        if isinstance(content, str) and content.strip():
+        if isinstance(content, str):
             return content
-    # Fallbacks for non-standard shapes. These only accept non-empty strings.
     for key in ("output", "result", "content", "message"):
         value = response.get(key)
-        if isinstance(value, str) and value.strip():
+        if isinstance(value, str):
             return value
-        if isinstance(value, dict):
-            inner = value.get("content")
-            if isinstance(inner, str) and inner.strip():
-                return inner
-    # No usable textual content was found.
-    return ""
+        if isinstance(value, dict) and isinstance(value.get("content"), str):
+            return value["content"]
+    return json.dumps(response, indent=2, ensure_ascii=False)

@@ -8,7 +8,12 @@
 </head>
 <body>
   <main class="shell" data-controller="desk">
-    <header><p class="eyebrow">MYGENASSIST · REVIEW-FIRST</p><h1>Indian Equity Research Desk</h1><p>Run research or review developer changes before anything is written.</p></header>
+    <header>
+      <p class="eyebrow">MYGENASSIST · REVIEW-FIRST</p>
+      <h1>Indian Equity Research Desk</h1>
+      <p>Run research or review developer changes before anything is written.</p>
+    </header>
+
     <nav class="tabs" aria-label="Workspace sections">
       <button class="tab active" data-tab="research" aria-selected="true">Research Run</button>
       <button class="tab" data-tab="developer" aria-selected="false">Developer Changes</button>
@@ -16,26 +21,72 @@
     </nav>
 
     <section id="research" class="panel active">
-      <div class="card"><h2>Research run</h2><p class="muted">Your token stays on the server and is read only from environment variables.</p>
+      <div class="card">
+        <h2>Research run</h2>
+        <p class="muted">Reports are tuned for **real insights** with concrete levels, symbols, and clear risk controls. Your token stays on the server and is read only from environment variables.</p>
         <form id="research-form" class="form-grid">
-          <label>Capital (INR)<input name="capital" type="number" min="1" value="500000" required></label>
-          <label>Risk per trade (%)<input name="risk_percent" type="number" min="0.01" max="5" step="0.01" value="1" required></label>
-          <label>Max positions<input name="max_positions" type="number" min="1" max="10" value="3" required></label>
-          <label>Run context<select name="run_context"><option value="post-market">Post-market</option><option value="pre-open">Pre-open</option></select></label>
+          <label>Capital (INR)
+            <input name="capital" type="number" min="1" value="500000" required>
+          </label>
+          <label>Risk per trade (%)
+            <input name="risk_percent" type="number" min="0.01" max="5" step="0.01" value="1" required>
+          </label>
+          <label>Max positions
+            <input name="max_positions" type="number" min="1" max="10" value="3" required>
+          </label>
+          <label>Run context
+            <select name="run_context">
+              <option value="post-market">Post-market</option>
+              <option value="pre-open">Pre-open</option>
+            </select>
+          </label>
           <button class="primary" type="submit">Run research</button>
         </form>
       </div>
-      <article class="card output"><h2>Report</h2><p id="research-meta" class="muted">No run yet.</p><pre id="research-output">Results will appear here.</pre></article>
+      <article class="card output">
+        <h2>Report</h2>
+        <p id="research-meta" class="muted">No run yet. When ready, you'll see a compact report with symbols, key levels, and position sizing details.</p>
+        <pre id="research-output">Results will appear here.</pre>
+      </article>
     </section>
 
     <section id="developer" class="panel">
-      <div class="card"><h2>Developer change request</h2><p class="muted">The model receives a bounded source snapshot and returns a plan only. No terminal or shell commands are available. You must explicitly apply an approved plan.</p>
-        <form id="developer-form"><label>Enhancement request<textarea name="request" maxlength="8000" required placeholder="e.g. Add a read-only report filter to the UI."></textarea></label><button class="primary" type="submit">Generate reviewed plan</button></form>
+      <div class="card">
+        <h2>Developer change request</h2>
+        <p class="muted">The model receives a bounded source snapshot and returns a plan only. No terminal or shell commands are available. You must explicitly apply an approved plan.</p>
+        <form id="developer-form">
+          <label>Enhancement request
+            <textarea name="request" maxlength="8000" required placeholder="e.g. Tune prompt so reports stay short but show exact levels and risk in numbers."></textarea>
+          </label>
+          <button class="primary" type="submit">Generate reviewed plan</button>
+        </form>
       </div>
-      <article id="plan-card" class="card hidden"><h2 id="plan-summary"></h2><div id="plan-details"></div><div id="plan-files"></div><button id="apply-plan" class="danger" type="button">Apply reviewed changes</button><p class="muted">Apply writes only allowlisted files, backs up changed files, and records a change log.</p></article>
+      <article id="plan-card" class="card hidden">
+        <h2 id="plan-summary"></h2>
+        <div id="plan-details"></div>
+        <div id="plan-files"></div>
+        <button id="apply-plan" class="danger" type="button">Apply reviewed changes</button>
+        <p class="muted">Apply writes only allowlisted files, backs up changed files, and records a change log.</p>
+      </article>
     </section>
 
-    <section id="project" class="panel"><div class="card"><div class="row"><div><h2>Project files</h2><p class="muted">Editable source inventory (contents are not exposed here).</p></div><button id="refresh-project" type="button">Refresh</button></div><ul id="project-files" class="file-list"></ul></div><div class="card"><h2>Change history</h2><ul id="history" class="history"></ul></div></section>
+    <section id="project" class="panel">
+      <div class="card">
+        <div class="row">
+          <div>
+            <h2>Project files</h2>
+            <p class="muted">Editable source inventory (contents are not exposed here).</p>
+          </div>
+          <button id="refresh-project" type="button">Refresh</button>
+        </div>
+        <ul id="project-files" class="file-list"></ul>
+      </div>
+      <div class="card">
+        <h2>Change history</h2>
+        <ul id="history" class="history"></ul>
+      </div>
+    </section>
+
     <p id="status" role="status" aria-live="polite"></p>
   </main>
   <script src="{{ url_for('static', filename='app.js') }}"></script>

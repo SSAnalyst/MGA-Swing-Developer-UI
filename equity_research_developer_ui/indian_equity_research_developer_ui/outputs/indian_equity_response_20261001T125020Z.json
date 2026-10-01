@@ -1,0 +1,399 @@
+{
+  "id": "01a0f783-d202-7345-8ecf-02e9b8f5e836",
+  "created": 1790859020,
+  "model": "gpt-5.1",
+  "object": "chat.completion",
+  "choices": [
+    {
+      "finish_reason": "interrupted",
+      "index": 0,
+      "message": {
+        "content": "",
+        "role": "assistant"
+      }
+    }
+  ],
+  "cost": 0.0292795,
+  "conversation_id": "01a0f783-d203-7179-b6ed-00530b5c8410",
+  "usage": {
+    "completion_tokens": 426,
+    "prompt_tokens": 39254,
+    "total_tokens": 39680,
+    "prompt_tokens_details": {
+      "cached_tokens": 21376
+    }
+  },
+  "metadata": [
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "web_search",
+          "category": "tools"
+        },
+        "name": "discover_tools",
+        "tool_name": "discover_tools",
+        "run_id": "call_OZIbkU9Qp70Mve5NljqtqYl2",
+        "status": "start",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "web_search",
+          "category": "tools"
+        },
+        "output": "- **Web Search** (`websearch`): Useful for when you need to search the web.\n- **search-onedrive-files** (`ms365_search-onedrive-files`): Search the hierarchy of items for items matching a query.\nYou can search within a folder hierarchy, a whole drive, or files shared with the current user.\n\n💡 TIP: Searches for files in a drive by name or content. The q parameter searches file names, metadata, and file content. Returns matching driveItems with id, name, webUrl, size, lastModifiedDateTime. Use list-drives first to get the drive-id.\n- **search_kumo_docs** (`kumo-mcp_search_kumo_docs`): Search official Kumo product documentation and return full markdown content.\n\nThis tool searches the canonical Kumo documentation published in the\nbayer-int/kumo-cli repository under kumo-doc/docs. It is the best way to\nlearn how Kumo works: CLI commands, spaces, pipelines, file transfer,\ngovernance, authentication, deployment, and platform concepts.\n\nUnlike a generic web search, results come directly from maintained Kumo docs.\n- **search-sharepoint-sites** (`ms365_search-sharepoint-sites`): List all available sites in an organization. Specific filter criteria and query options are also supported and described below: In addition, you can use a $search query against the /sites collection to find sites matching given keywords.\nIf you want to list all sites across all geographies, refer to getAllSites. For more guidance about building applications that use site discovery for scanning purposes, see Best practices for discovering files and detecting changes at scale.\n- **search_kumo_docs** (`kumo-dev-mcp_search_kumo_docs`): Search official Kumo product documentation and return full markdown content.\n\nThis tool searches the canonical Kumo documentation published in the\nbayer-int/kumo-cli repository under kumo-doc/docs. It is the best way to\nlearn how Kumo works: CLI commands, spaces, pipelines, file transfer,\ngovernance, authentication, deployment, and platform concepts.\n\nUnlike a generic web search, results come directly from maintained Kumo docs.",
+        "name": "discover_tools",
+        "tool_name": "discover_tools",
+        "run_id": "call_OZIbkU9Qp70Mve5NljqtqYl2",
+        "status": "end",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "Nifty 50 today close, 20 EMA, 50 EMA, India VIX, FII DII cash market flows, global cues US markets Asia crude oil USDINR US 10Y",
+          "num_results": 5,
+          "date_restrict": "d1"
+        },
+        "name": "websearch",
+        "tool_name": "websearch",
+        "run_id": "call_ZyUtfbydssHxGbixLj4T8i4i",
+        "status": "start",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "Bank Nifty today close 20 EMA 50 EMA breadth advance decline India",
+          "num_results": 5,
+          "date_restrict": "d1"
+        },
+        "name": "websearch",
+        "tool_name": "websearch",
+        "run_id": "call_6729NeNebzIyLCQ7Qdqf7J50",
+        "status": "start",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "NSE F&O ban list today",
+          "num_results": 5,
+          "date_restrict": "d1"
+        },
+        "name": "websearch",
+        "tool_name": "websearch",
+        "run_id": "call_mLaPSXpnTvntdhK5Tw2tH8Dj",
+        "status": "start",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "NSE ASM GSM list",
+          "num_results": 5,
+          "date_restrict": "d7"
+        },
+        "name": "websearch",
+        "tool_name": "websearch",
+        "run_id": "call_4NQkVKtNdCd7oW2Kz0vaKIvs",
+        "status": "start",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "site:nseindia.com \"Latest Announcements\"",
+          "num_results": 3,
+          "date_restrict": "d1"
+        },
+        "name": "websearch",
+        "tool_name": "websearch",
+        "run_id": "call_2v267MM53FwYBt9eM66KmF1e",
+        "status": "start",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "Moneycontrol stocks 52 week high today NSE",
+          "num_results": 5,
+          "date_restrict": "d1"
+        },
+        "name": "websearch",
+        "tool_name": "websearch",
+        "run_id": "call_8ZrPwoJ2uJDRSl9BgxOrdXIt",
+        "status": "start",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "\"bulk deals\" NSE today",
+          "num_results": 5,
+          "date_restrict": "d1"
+        },
+        "name": "websearch",
+        "tool_name": "websearch",
+        "run_id": "call_TJkQ1DPRrSV4xVAbaCaHoiFx",
+        "status": "start",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "India stock movers today Moneycontrol top gainers high volume",
+          "num_results": 5,
+          "date_restrict": "d1"
+        },
+        "name": "websearch",
+        "tool_name": "websearch",
+        "run_id": "call_DMXKYp7Yz59fV7ndSkS9TX4Y",
+        "status": "start",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "\"results calendar\" NSE corporate events next 3 days",
+          "num_results": 5,
+          "date_restrict": "d7"
+        },
+        "name": "websearch",
+        "tool_name": "websearch",
+        "run_id": "call_Rh4sAsLKyS7FD87gIztjBuFD",
+        "status": "start",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "Yahoo Finance India NSE historical data 14 days for top volume stocks",
+          "num_results": 5,
+          "date_restrict": "d7"
+        },
+        "name": "websearch",
+        "tool_name": "websearch",
+        "run_id": "call_ad2LysNyYBqCIhIhiXbUbxnT",
+        "status": "start",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "interrupt",
+        "interrupt_id": "c891b2dd9317ec86e9f6cc7faebd1c4a",
+        "type": "tool_approval",
+        "action_requests": [
+          {
+            "name": "websearch",
+            "args": {
+              "query": "Nifty 50 today close, 20 EMA, 50 EMA, India VIX, FII DII cash market flows, global cues US markets Asia crude oil USDINR US 10Y",
+              "num_results": 5,
+              "date_restrict": "d1"
+            },
+            "description": ""
+          },
+          {
+            "name": "websearch",
+            "args": {
+              "query": "Bank Nifty today close 20 EMA 50 EMA breadth advance decline India",
+              "num_results": 5,
+              "date_restrict": "d1"
+            },
+            "description": ""
+          },
+          {
+            "name": "websearch",
+            "args": {
+              "query": "NSE F&O ban list today",
+              "num_results": 5,
+              "date_restrict": "d1"
+            },
+            "description": ""
+          },
+          {
+            "name": "websearch",
+            "args": {
+              "query": "NSE ASM GSM list",
+              "num_results": 5,
+              "date_restrict": "d7"
+            },
+            "description": ""
+          },
+          {
+            "name": "websearch",
+            "args": {
+              "query": "site:nseindia.com \"Latest Announcements\"",
+              "num_results": 3,
+              "date_restrict": "d1"
+            },
+            "description": ""
+          },
+          {
+            "name": "websearch",
+            "args": {
+              "query": "Moneycontrol stocks 52 week high today NSE",
+              "num_results": 5,
+              "date_restrict": "d1"
+            },
+            "description": ""
+          },
+          {
+            "name": "websearch",
+            "args": {
+              "query": "\"bulk deals\" NSE today",
+              "num_results": 5,
+              "date_restrict": "d1"
+            },
+            "description": ""
+          },
+          {
+            "name": "websearch",
+            "args": {
+              "query": "India stock movers today Moneycontrol top gainers high volume",
+              "num_results": 5,
+              "date_restrict": "d1"
+            },
+            "description": ""
+          },
+          {
+            "name": "websearch",
+            "args": {
+              "query": "\"results calendar\" NSE corporate events next 3 days",
+              "num_results": 5,
+              "date_restrict": "d7"
+            },
+            "description": ""
+          },
+          {
+            "name": "websearch",
+            "args": {
+              "query": "Yahoo Finance India NSE historical data 14 days for top volume stocks",
+              "num_results": 5,
+              "date_restrict": "d7"
+            },
+            "description": ""
+          }
+        ],
+        "review_configs": [
+          {
+            "action_name": "websearch",
+            "allowed_decisions": [
+              "approve",
+              "edit",
+              "reject",
+              "respond"
+            ]
+          },
+          {
+            "action_name": "websearch",
+            "allowed_decisions": [
+              "approve",
+              "edit",
+              "reject",
+              "respond"
+            ]
+          },
+          {
+            "action_name": "websearch",
+            "allowed_decisions": [
+              "approve",
+              "edit",
+              "reject",
+              "respond"
+            ]
+          },
+          {
+            "action_name": "websearch",
+            "allowed_decisions": [
+              "approve",
+              "edit",
+              "reject",
+              "respond"
+            ]
+          },
+          {
+            "action_name": "websearch",
+            "allowed_decisions": [
+              "approve",
+              "edit",
+              "reject",
+              "respond"
+            ]
+          },
+          {
+            "action_name": "websearch",
+            "allowed_decisions": [
+              "approve",
+              "edit",
+              "reject",
+              "respond"
+            ]
+          },
+          {
+            "action_name": "websearch",
+            "allowed_decisions": [
+              "approve",
+              "edit",
+              "reject",
+              "respond"
+            ]
+          },
+          {
+            "action_name": "websearch",
+            "allowed_decisions": [
+              "approve",
+              "edit",
+              "reject",
+              "respond"
+            ]
+          },
+          {
+            "action_name": "websearch",
+            "allowed_decisions": [
+              "approve",
+              "edit",
+              "reject",
+              "respond"
+            ]
+          },
+          {
+            "action_name": "websearch",
+            "allowed_decisions": [
+              "approve",
+              "edit",
+              "reject",
+              "respond"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "trace_id": "6abe56fe5390f97cfbbca4a6308d71d0"
+}

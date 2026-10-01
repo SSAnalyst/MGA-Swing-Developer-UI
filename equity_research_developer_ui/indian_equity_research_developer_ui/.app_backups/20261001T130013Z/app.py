@@ -11,22 +11,10 @@ from flask import Flask, jsonify, render_template, request
 from indian_equity_research.client import MyGenAssistClient, extract_text
 from indian_equity_research.config import Settings
 from indian_equity_research.project_editor import (
-    add_diffs,
-    apply_plan,
-    build_snapshot,
-    developer_prompt,
-    extract_json,
-    inventory_project,
-    new_plan_id,
-    read_history,
-    validate_plan,
+    add_diffs, apply_plan, build_snapshot, developer_prompt, extract_json, inventory_project,
+    new_plan_id, read_history, validate_plan,
 )
 from indian_equity_research.runner import run
-from indian_equity_research.yahoo_data import (
-    YahooFinanceError,
-    get_daily_summary,
-    summary_to_dict,
-)
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 load_dotenv(PROJECT_ROOT / ".env")
@@ -55,7 +43,7 @@ def index():
 def models():
     try:
         return jsonify(MyGenAssistClient(Settings.from_env()).list_models())
-    except Exception as exc:  # pragma: no cover - network
+    except Exception as exc:
         return error(str(exc), 502)
 
 
@@ -71,59 +59,17 @@ def research():
             return error("Capital must be positive; risk must be 0–5; positions must be 1–10.")
         if context not in {"post-market", "pre-open"}:
             return error("Invalid run context.")
-        report, path = run(
-            capital,
-            risk_percent,
-            max_positions,
-            context,
-            str(PROJECT_ROOT / "outputs"),
-        )
-        return jsonify({
-            "report": report,
-            "saved_to": str(path.relative_to(PROJECT_ROOT)),
-        })
+        report, path = run(capital, risk_percent, max_positions, context, str(PROJECT_ROOT / "outputs"))
+        return jsonify({"report": report, "saved_to": str(path.relative_to(PROJECT_ROOT))})
     except (ValueError, TypeError) as exc:
         return error(str(exc))
-    except Exception as exc:  # pragma: no cover - network / upstream
-        return error(str(exc), 502)
-
-
-@app.get("/api/yahoo/daily")
-def yahoo_daily():
-    """Return basic daily data for a given Yahoo Finance symbol.
-
-    This endpoint intentionally stays small and read‑only. It gives callers
-    a way to fetch explicit, timestamped daily OHLC data and a couple of
-    derived metrics using Yahoo Finance, without changing the existing
-    research flow.
-    """
-
-    symbol = request.args.get("symbol", "").strip()
-    if not symbol:
-        return error("Query parameter 'symbol' is required.")
-    try:
-        range_ = request.args.get("range", "1mo").strip() or "1mo"
-        summary = get_daily_summary(symbol, range_=range_)
-        return jsonify(summary_to_dict(summary))
-    except YahooFinanceError as exc:
-        return error(str(exc), 502)
-    except Exception as exc:  # pragma: no cover - defensive
+    except Exception as exc:
         return error(str(exc), 502)
 
 
 @app.get("/api/project")
 def project():
-    return jsonify({
-        "files": inventory_project(PROJECT_ROOT),
-        "editable": [
-            "src/",
-            "templates/",
-            "static/",
-            "notebooks/",
-            "README.md",
-            "requirements.txt",
-        ],
-    })
+    return jsonify({"files": inventory_project(PROJECT_ROOT), "editable": ["src/", "templates/", "static/", "notebooks/", "README.md", "requirements.txt"]})
 
 
 @app.post("/api/developer/plan")
@@ -143,7 +89,7 @@ def plan_developer_change():
         return jsonify({"plan_id": plan_id, "plan": preview})
     except ValueError as exc:
         return error(str(exc))
-    except Exception as exc:  # pragma: no cover - network / upstream
+    except Exception as exc:
         return error(str(exc), 502)
 
 
@@ -153,14 +99,12 @@ def apply_developer_change():
         data = body()
         plan_id = data.get("plan_id")
         if not isinstance(plan_id, str) or plan_id not in _PENDING_PLANS:
-            return error(
-                "This review plan is missing or expired. Generate and review a new plan."
-            )
+            return error("This review plan is missing or expired. Generate and review a new plan.")
         plan = _PENDING_PLANS.pop(plan_id)
         return jsonify({"applied": apply_plan(PROJECT_ROOT, plan)})
     except ValueError as exc:
         return error(str(exc))
-    except Exception as exc:  # pragma: no cover - defensive
+    except Exception as exc:
         return error(str(exc), 500)
 
 
@@ -169,5 +113,5 @@ def history():
     return jsonify({"history": read_history(PROJECT_ROOT)})
 
 
-if __name__ == "__main__":  # pragma: no cover - manual run only
+if __name__ == "__main__":
     app.run(host="127.0.0.1", port=int(os.getenv("PORT", "5000")), debug=False)

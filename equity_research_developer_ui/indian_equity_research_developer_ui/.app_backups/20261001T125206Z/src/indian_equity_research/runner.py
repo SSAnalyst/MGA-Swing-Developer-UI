@@ -18,26 +18,10 @@ def run(
     run_context: str,
     output_dir: str = "outputs",
 ) -> tuple[str, Path]:
-    """Execute a research run and persist both human and raw outputs.
-
-    If the upstream model response does not contain any usable textual report
-    content (for example because the run was interrupted for tool approval),
-    this function raises a RuntimeError instead of silently writing an empty
-    report file. The caller (CLI or Flask) can surface this as an error
-    message to the user.
-    """
     settings = Settings.from_env()
     prompt = build_prompt(capital, risk_percent, max_positions, run_context)
     response: dict[str, Any] = MyGenAssistClient(settings).run_research_agent(prompt)
     report = extract_text(response)
-
-    if not report.strip():
-        # Preserve the raw response for debugging, but avoid pretending that a
-        # successful report was produced.
-        raise RuntimeError(
-            "The research agent did not return any report text. "
-            "Check the saved raw response for tool-approval interruptions or errors."
-        )
 
     destination = Path(output_dir)
     destination.mkdir(parents=True, exist_ok=True)

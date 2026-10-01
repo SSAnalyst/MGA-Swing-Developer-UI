@@ -15,7 +15,7 @@ from typing import Any
 from uuid import uuid4
 
 EDITABLE_PREFIXES = ("src/", "templates/", "static/", "notebooks/")
-EDITABLE_FILES = {"README.md", "requirements.txt"}
+EDITABLE_FILES = {"README.md", "requirements.txt", "app.py"}
 MAX_FILE_BYTES = 100_000
 MAX_PLAN_BYTES = 400_000
 MAX_SNAPSHOT_BYTES = 120_000

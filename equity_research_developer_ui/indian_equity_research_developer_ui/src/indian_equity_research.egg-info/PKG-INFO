@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: indian-equity-research
+Version: 0.1.0
+Summary: myGenAssist-powered Indian equity swing-research decision-support runner
+Requires-Python: >=3.10
+Requires-Dist: requests>=2.31.0
+Requires-Dist: python-dotenv>=1.0.1
+Requires-Dist: Flask>=3.0.0
