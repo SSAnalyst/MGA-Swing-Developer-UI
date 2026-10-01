@@ -1,0 +1,399 @@
+{
+  "id": "01a0f733-c872-7bca-a3e5-2761e51020f3",
+  "created": 1790853777,
+  "model": "gpt-5.1",
+  "object": "chat.completion",
+  "choices": [
+    {
+      "finish_reason": "interrupted",
+      "index": 0,
+      "message": {
+        "content": "",
+        "role": "assistant"
+      }
+    }
+  ],
+  "cost": 0.05221,
+  "conversation_id": "01a0f733-c873-72fd-b180-21bf90285ece",
+  "usage": {
+    "completion_tokens": 415,
+    "prompt_tokens": 38448,
+    "total_tokens": 38863,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "metadata": [
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "web_search",
+          "category": "tools"
+        },
+        "name": "discover_tools",
+        "tool_name": "discover_tools",
+        "run_id": "call_YolUzxe9IxskFMMpArGYpVNc",
+        "status": "start",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "web_search",
+          "category": "tools"
+        },
+        "output": "- **Web Search** (`websearch`): Useful for when you need to search the web.\n- **search-onedrive-files** (`ms365_search-onedrive-files`): Search the hierarchy of items for items matching a query.\nYou can search within a folder hierarchy, a whole drive, or files shared with the current user.\n\n💡 TIP: Searches for files in a drive by name or content. The q parameter searches file names, metadata, and file content. Returns matching driveItems with id, name, webUrl, size, lastModifiedDateTime. Use list-drives first to get the drive-id.\n- **search_kumo_docs** (`kumo-mcp_search_kumo_docs`): Search official Kumo product documentation and return full markdown content.\n\nThis tool searches the canonical Kumo documentation published in the\nbayer-int/kumo-cli repository under kumo-doc/docs. It is the best way to\nlearn how Kumo works: CLI commands, spaces, pipelines, file transfer,\ngovernance, authentication, deployment, and platform concepts.\n\nUnlike a generic web search, results come directly from maintained Kumo docs.\n- **search-sharepoint-sites** (`ms365_search-sharepoint-sites`): List all available sites in an organization. Specific filter criteria and query options are also supported and described below: In addition, you can use a $search query against the /sites collection to find sites matching given keywords.\nIf you want to list all sites across all geographies, refer to getAllSites. For more guidance about building applications that use site discovery for scanning purposes, see Best practices for discovering files and detecting changes at scale.\n- **search_kumo_docs** (`kumo-dev-mcp_search_kumo_docs`): Search official Kumo product documentation and return full markdown content.\n\nThis tool searches the canonical Kumo documentation published in the\nbayer-int/kumo-cli repository under kumo-doc/docs. It is the best way to\nlearn how Kumo works: CLI commands, spaces, pipelines, file transfer,\ngovernance, authentication, deployment, and platform concepts.\n\nUnlike a generic web search, results come directly from maintained Kumo docs.",
+        "name": "discover_tools",
+        "tool_name": "discover_tools",
+        "run_id": "call_YolUzxe9IxskFMMpArGYpVNc",
+        "status": "end",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "Nifty 50 today 20 EMA 50 EMA close India VIX FII DII flows",
+          "num_results": 5,
+          "date_restrict": "d1"
+        },
+        "name": "websearch",
+        "tool_name": "websearch",
+        "run_id": "call_Vxj4kJHLT3Detp1uRqGXifml",
+        "status": "start",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "Bank Nifty today 20 EMA 50 EMA close",
+          "num_results": 5,
+          "date_restrict": "d1"
+        },
+        "name": "websearch",
+        "tool_name": "websearch",
+        "run_id": "call_lsd7N3lwWuyHHg5xKfZlDwPC",
+        "status": "start",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "India VIX today level",
+          "num_results": 5,
+          "date_restrict": "d1"
+        },
+        "name": "websearch",
+        "tool_name": "websearch",
+        "run_id": "call_oU6lINTfyZZVAiLu2JZdkTWa",
+        "status": "start",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "FII DII cash market flows today India",
+          "num_results": 5,
+          "date_restrict": "d1"
+        },
+        "name": "websearch",
+        "tool_name": "websearch",
+        "run_id": "call_yBk3CECMNZIrUDVucksxuN2c",
+        "status": "start",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "global markets US indices today, Asian markets, Brent crude price, USDINR, US 10 year yield",
+          "num_results": 5,
+          "date_restrict": "d1"
+        },
+        "name": "websearch",
+        "tool_name": "websearch",
+        "run_id": "call_OJbhXpc3f2UlsmNe34jzuCdB",
+        "status": "start",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "NSE F&O ban list today",
+          "num_results": 5,
+          "date_restrict": "d1"
+        },
+        "name": "websearch",
+        "tool_name": "websearch",
+        "run_id": "call_tDR8lUf2ts9IIBMrgYlOBAjK",
+        "status": "start",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "NSE ASM GSM list",
+          "num_results": 5,
+          "date_restrict": "d1"
+        },
+        "name": "websearch",
+        "tool_name": "websearch",
+        "run_id": "call_ZIk2gHLyrrLOl3ggpDbfZ9Pi",
+        "status": "start",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "NSE top gainers losers cash segment last 5 days high volume breakout",
+          "num_results": 5,
+          "date_restrict": "d3"
+        },
+        "name": "websearch",
+        "tool_name": "websearch",
+        "run_id": "call_I6Ib9r1XoFIQlkn2VaXNIF53",
+        "status": "start",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "NSE 52 week high breakout stocks last 5 days",
+          "num_results": 5,
+          "date_restrict": "d5"
+        },
+        "name": "websearch",
+        "tool_name": "websearch",
+        "run_id": "call_v1K6Pi1xJawr1IyG0Qzk1W18",
+        "status": "start",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "action",
+        "input": {
+          "query": "Moneycontrol stocks with price breakout and volume surge India today",
+          "num_results": 5,
+          "date_restrict": "d1"
+        },
+        "name": "websearch",
+        "tool_name": "websearch",
+        "run_id": "call_u9gcc4guhHkFsHN2K5Hf0YBz",
+        "status": "start",
+        "is_subagent": false
+      }
+    },
+    {
+      "event": {
+        "event_type": "interrupt",
+        "interrupt_id": "cdbb8dc3d162deb9af35be57b4a62d30",
+        "type": "tool_approval",
+        "action_requests": [
+          {
+            "name": "websearch",
+            "args": {
+              "query": "Nifty 50 today 20 EMA 50 EMA close India VIX FII DII flows",
+              "num_results": 5,
+              "date_restrict": "d1"
+            },
+            "description": ""
+          },
+          {
+            "name": "websearch",
+            "args": {
+              "query": "Bank Nifty today 20 EMA 50 EMA close",
+              "num_results": 5,
+              "date_restrict": "d1"
+            },
+            "description": ""
+          },
+          {
+            "name": "websearch",
+            "args": {
+              "query": "India VIX today level",
+              "num_results": 5,
+              "date_restrict": "d1"
+            },
+            "description": ""
+          },
+          {
+            "name": "websearch",
+            "args": {
+              "query": "FII DII cash market flows today India",
+              "num_results": 5,
+              "date_restrict": "d1"
+            },
+            "description": ""
+          },
+          {
+            "name": "websearch",
+            "args": {
+              "query": "global markets US indices today, Asian markets, Brent crude price, USDINR, US 10 year yield",
+              "num_results": 5,
+              "date_restrict": "d1"
+            },
+            "description": ""
+          },
+          {
+            "name": "websearch",
+            "args": {
+              "query": "NSE F&O ban list today",
+              "num_results": 5,
+              "date_restrict": "d1"
+            },
+            "description": ""
+          },
+          {
+            "name": "websearch",
+            "args": {
+              "query": "NSE ASM GSM list",
+              "num_results": 5,
+              "date_restrict": "d1"
+            },
+            "description": ""
+          },
+          {
+            "name": "websearch",
+            "args": {
+              "query": "NSE top gainers losers cash segment last 5 days high volume breakout",
+              "num_results": 5,
+              "date_restrict": "d3"
+            },
+            "description": ""
+          },
+          {
+            "name": "websearch",
+            "args": {
+              "query": "NSE 52 week high breakout stocks last 5 days",
+              "num_results": 5,
+              "date_restrict": "d5"
+            },
+            "description": ""
+          },
+          {
+            "name": "websearch",
+            "args": {
+              "query": "Moneycontrol stocks with price breakout and volume surge India today",
+              "num_results": 5,
+              "date_restrict": "d1"
+            },
+            "description": ""
+          }
+        ],
+        "review_configs": [
+          {
+            "action_name": "websearch",
+            "allowed_decisions": [
+              "approve",
+              "edit",
+              "reject",
+              "respond"
+            ]
+          },
+          {
+            "action_name": "websearch",
+            "allowed_decisions": [
+              "approve",
+              "edit",
+              "reject",
+              "respond"
+            ]
+          },
+          {
+            "action_name": "websearch",
+            "allowed_decisions": [
+              "approve",
+              "edit",
+              "reject",
+              "respond"
+            ]
+          },
+          {
+            "action_name": "websearch",
+            "allowed_decisions": [
+              "approve",
+              "edit",
+              "reject",
+              "respond"
+            ]
+          },
+          {
+            "action_name": "websearch",
+            "allowed_decisions": [
+              "approve",
+              "edit",
+              "reject",
+              "respond"
+            ]
+          },
+          {
+            "action_name": "websearch",
+            "allowed_decisions": [
+              "approve",
+              "edit",
+              "reject",
+              "respond"
+            ]
+          },
+          {
+            "action_name": "websearch",
+            "allowed_decisions": [
+              "approve",
+              "edit",
+              "reject",
+              "respond"
+            ]
+          },
+          {
+            "action_name": "websearch",
+            "allowed_decisions": [
+              "approve",
+              "edit",
+              "reject",
+              "respond"
+            ]
+          },
+          {
+            "action_name": "websearch",
+            "allowed_decisions": [
+              "approve",
+              "edit",
+              "reject",
+              "respond"
+            ]
+          },
+          {
+            "action_name": "websearch",
+            "allowed_decisions": [
+              "approve",
+              "edit",
+              "reject",
+              "respond"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "trace_id": "6abe4280407567b8b8de441b04c0e26e"
+}
